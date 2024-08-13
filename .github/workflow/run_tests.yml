@@ -2,7 +2,7 @@ name: Run tests workflow
 
 on: 
   pull_request:
-    branches: [main, develop]
+    branches: [main, newdevelop]
 
 jobs:
   run-tests:
