@@ -18,3 +18,6 @@ jobs:
       - name: Test with pytest
         run: 
           python -m pytest tests.py
+      - name: Test with flake8
+        run:
+          python flake8 main.py
