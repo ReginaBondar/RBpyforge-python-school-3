@@ -4,9 +4,8 @@ from fastapi import HTTPException
 import pytest
 
 
-@pytest.mark.parametrize("molecule_id, mol, expected", [(5, "CC(=O)", [{"molecule_id": 5, "molecule": "CC(=O)"}]),
-                                                        (6, "c1ccccc1", [{"molecule_id": 5, "molecule": "CC(=O)"},
-                                                                         {"molecule_id": 6, "molecule": "c1ccccc1"}])])
+@pytest.mark.parametrize("molecule_id, mol, expected", [(5, "CC(=O)", {"molecule_id": 5, "molecule": "CC(=O)"}),
+                                                        (6, "c1ccccc1", {"molecule_id": 6, "molecule": "c1ccccc1"})])
 def test_add_molecule(molecule_id, mol, expected):
     result = add_molecule(molecule_id, mol)
     assert result == expected
