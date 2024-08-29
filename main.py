@@ -113,13 +113,13 @@ def add_molecule(molecule_id: int, molecule: str):
 
 @app.get("/molecules-search", tags=["SEARCH"], summary="Substructure_search")
 def substructure_search(molecule_id: int, molecule: str,
-                        number_of_molecules: int = 1):
+                        limit: int = 1):
     """
         Enter the data of the molecule that was added:
 
         - **molecule_id**: each molecule must have a identifier
         - **molecule**: each molecule must have a name
-        - **number_of_molecules**: number of molecules in answer
+        - **limit**: number of molecules in answer
     """
     flag = False
     if len(molecules_db) >= num_all_molecules:
@@ -129,7 +129,7 @@ def substructure_search(molecule_id: int, molecule: str,
     if flag:
         molecules_container = [Chem.MolFromSmiles(smiles)
                                for smiles in molecules_values]
-        index_db = IteratorMolecules(molecules_container, molecule_add, limit)
+        index_db = IteratorMolecules(molecules_container, new_molecule, limit)
         substructure_result = [molecules_db[i]
                                for i in index_db if i is not None]
 
