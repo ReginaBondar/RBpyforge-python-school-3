@@ -1,6 +1,3 @@
-from rdkit import Chem
-
-
 class IteratorMolecules:
     def __init__(self, sequence, molecule, stop=1):
         self._sequence = sequence
