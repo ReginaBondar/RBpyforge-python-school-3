@@ -129,10 +129,9 @@ def substructure_search(molecule_id: int, molecule: str,
     if flag:
         molecules_container = [Chem.MolFromSmiles(smiles)
                                for smiles in molecules_values]
-        smiles_db = IteratorMolecules(molecules_container, number_of_molecules)
-        substructure_result = [molecules_db[index] for index, molec
-                               in enumerate(smiles_db)
-                               if molec.HasSubstructMatch(new_molecule)]
+        index_db = IteratorMolecules(molecules_container, molecule_add, limit)
+        substructure_result = [molecules_db[i]
+                               for i in index_db if i is not None]
 
         logging.info(f"The search for the  substructure of the molecules"
                      f" is successfully completed.\n"
