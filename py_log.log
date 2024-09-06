@@ -1,0 +1,6 @@
+2024-09-05 17:36:13,063 DEBUG A DEBUG Message
+2024-09-05 17:36:13,063 INFO An INFO
+2024-09-05 17:36:13,063 WARNING A WARNING
+2024-09-05 17:36:13,063 CRITICAL A message of CRITICAL severity
+2024-09-05 17:36:18,975 INFO Molecule with id=3 successfully released.
+Response:{'molecule_id': 3, 'molecule': 'CC(=O)O'}
