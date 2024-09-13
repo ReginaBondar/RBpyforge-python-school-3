@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${myimage}
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build_image_run_tests_push_image:
