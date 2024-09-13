@@ -2,14 +2,14 @@ name: Build image, run tests, push image
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, my]
     tags: ['v*']
   pull_request:
-    branches: [main, develop]
+    branches: [main, my]
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{github.repository}}
 
 jobs:
   build_image_run_tests_push_image:
